@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #05040a;
+  color: #e8e4f4;
+  font-family: var(--font-body);
+}
+
+/* Signature glass panel used across the app */
+.glass {
+  background: linear-gradient(180deg, rgba(23, 17, 41, 0.65), rgba(11, 9, 18, 0.55));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(177, 76, 255, 0.14);
+}
+
+.glass-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.glass-hover:hover {
+  border-color: rgba(177, 76, 255, 0.4);
+  box-shadow: 0 0 40px -10px rgba(177, 76, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(177, 76, 255, 0.55);
+}
+
+/* Thin neon scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0912;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a2a5c;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b14cff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
